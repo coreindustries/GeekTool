@@ -1,0 +1,1 @@
+curl -s 'http://www.wunderground.com' | grep 'wx-value' | sed -n '2p' | awk -F '>' '{print $2}' | sed 's/<\/span//' | awk '{print "Feel like "$0"°C"}'
